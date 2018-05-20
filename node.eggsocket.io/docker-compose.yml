@@ -1,0 +1,14 @@
+version: "2"
+services:
+  socketio:
+    container_name: public-socketio
+    image: moyee/node8
+    environment:
+      - "EGG_SERVER_ENV=local"
+    ports:
+      - "7001:7001"
+    volumes:
+      - ./:/data/api/publish-socketio
+      - ./logs:/data/api/publish-socketio/logs
+    command: "tail -f /dev/null"
+
